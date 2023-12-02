@@ -1,6 +1,6 @@
 var typed3 = new Typed('.typed', {
     strings: ['Full Stack Developer', 
-               'Web developer'],
+               'IT Engineer'],
                typeSpeed: 100,
                backSpeed: 50,
                backDelay: 2000,
