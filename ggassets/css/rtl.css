@@ -1,0 +1,101 @@
+/*.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+float:right;}
+*/
+
+body{direction:rtl;}
+
+.fh5co-nav-toggle{right:15px;}
+
+
+/*  Articles Archives  */
+
+.link-widget li span {
+    position: absolute;
+    left: 0;
+    right:unset !important;
+}
+
+/*  Articles  */
+
+
+/*  owl  */
+.owl-carousel.owl-loaded {
+    display: block;
+    direction: ltr;
+}
+
+.widget__custom-form input[type=text], .widget__custom-form select {
+    direction: rtl;
+}
+
+
+
+.elementor-row {
+
+    direction: rtl;
+}
+
+#fh5co-footer {direction: rtl;}
+
+#fh5co-footer ul {padding-right: 0;}
+
+.numbers>ol li:before {
+
+    right: 0;
+
+}
+
+
+.numbers>ol li {
+
+    padding-right: 80px;
+
+}
+
+
+textarea.form-control, a[href^=tel], input[type=datetime], input[type=datetime-local], input[type=month], input[type=week], input[type=email], input[type=number], input[type=search], input[type=time], input[type=url], input[type=color], input[type=tel], input[type=text], input[type=password], input[type=date], textarea, select
+{
+    direction: rtl!important;
+}
+
+
+#fh5co-hero .flexslider .slider-text .slider-text-inner h1 {
+
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    position: absolute;
+    left: 0;
+    right:unset;
+    top:10px;
+}
+
+
+.time {
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.day {
+    float: right;
+}
+
+
+/*.form-group:lang(ar){float:right}*/
+
+
+
+@media only screen and (max-width: 600px) 
+{
+    #logo1{margin-left: 80px;}
+
+}

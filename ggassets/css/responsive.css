@@ -1,0 +1,123 @@
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) 
+{
+
+    #logo-center #fh5co-logo #logo{display:none;}
+    
+    .blog-custom-build .post-sharing .btn {
+    padding: 5px 20px;
+    font-size: 20px;
+}
+  
+  
+ .ArticleBox,.tab-pane  
+ {
+    margin: 10px;
+}
+
+
+.tab-title {
+
+    font-size: 1.4rem !important;
+
+}
+
+.ArticleTilte 
+{
+
+    font-size: 5rem;
+
+}   
+    
+    #slider_btn{top:0 !important;}
+ /*  Hero wide  */ 
+ 
+ .full-title {margin-top: 80px;}
+ 
+.hero-text h1
+{
+    position: relative;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+    
+    
+  
+/* Slider */  
+  
+  
+  
+  #fh5co-hero .flexslider .slider-text > .slider-text-inner h1,h2 
+  {
+    font-size:15px;
+    margin-bottom: 0;
+    line-height: 1;
+    font-weight: 100;
+    text-transform: uppercase;  
+  }
+.slider-text-inner > p{line-height: 0;}    
+    
+.slider-text-inner  .btn-slider .btn-primary .btn-lg{line-height:0!important;}
+  
+  .btn-slider {
+    padding: 0 5px!important;
+    font-size: 20px!important;
+    line-height: 0!important;
+}  
+    
+    
+/*  Phone - Whatsapp icon  */
+  
+.float_phone 
+{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 170px;
+    right: 10px;
+    background-color: #fcbe03;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+
+/*  Single Offer   */
+
+.fh5co-heading p {font-size: 15px;}
+
+.fh5co-heading {margin-top: 20px;}
+
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) 
+{
+    .gototop {bottom: 5px;}
+
+    
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px)
+{
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) 
+{
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) 
+{
+}
+
+
