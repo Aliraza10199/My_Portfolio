@@ -426,47 +426,118 @@
               <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="text">
                     <h3>Address</h3>
-                    <p>Jeddah Makkah, <br> Saudi Arabia, </p>
+                    <p>Jeddah Makkah, <br> Saudi Arabia </p>
                 </div>
             </div>
             <div class="box">
               <div class="icon"><i class="fas fa-envelope"></i></div>
                 <div class="text">
-                    <h3>Email</h3>
+                    <h3>Email:</h3>
                     <p>aliraza10199@gmail.com </p>
                 </div>
             </div>
             <div class="box">
-              <div class="icon"><i class="fas fa-phone-alt"></i></div>
-                <div class="text">
-                    <h3>Phone </h3>
-                    <p> (+966) 567609634  </p>
-                </div>
-            </div>
-          </div> 
-            <!-- <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435518.68178038835!2d74.05419780276763!3d31.483220875700606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1631912042595!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+                  <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                  <div class="text">
+                      <h3>Phone # </h3>
+                      <p> (+966) 567609634  </p>
+                  </div>
+              </div> 
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29694.842649561837!2d39.148422558649834!3d21.513385812751498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cf96dfe1ee0b%3A0x60a7b0349e9116fc!2sAl-Ruwais%2C%20Jeddah!5e0!3m2!1sen!2ssa!4v1739508199777!5m2!1sen!2ssa" width="400" height="230" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+              </div> 
+            <!-- <div class="box"> -->
+              <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29694.842649561837!2d39.148422558649834!3d21.513385812751498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cf96dfe1ee0b%3A0x60a7b0349e9116fc!2sAl-Ruwais%2C%20Jeddah!5e0!3m2!1sen!2ssa!4v1739508199777!5m2!1sen!2ssa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                <!-- <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435518.68178038835!2d74.05419780276763!3d31.483220875700606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1631912042595!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+             <!-- </div> -->
+          </div>
         </div>
         <div class="col-lg-6 form">
-            <form id="myForm" action="#" method="post">
+
+            <!-- modify this form HTML and place wherever you want your form -->
+              <form id="my-form" action="https://formspree.io/f/mvgzbjbe" method="POST">
+                <div class="form-group">
+                  <input type="text" name="firstname" placeholder="Your Name" class="box" id="firstname" required>
+                </div>
+                <div class="form-group">
+                  <input  name="email" placeholder="Email" type="email"  class="box" id="email" required="">
+                </div>
+                <div class="form-group">
+                  <input  name="mobile" placeholder="Mobile #" type="Mobile"  class="box" id="Mobile" required="">
+                    
+                </div>
+                <div class="form-group">
+                  <input name="subject" type="text" placeholder="subject" class="box" required="">
+                </div>
+                <div class="form-group">
+                  <textarea name="comment" class="box" placeholder="Your message" id="" cols="30" rows="10"  id="comment" required="" ></textarea>
+                </div>
+                 
+                <button class="btns" id="my-form-button">Submit</button>
+                <h1 id="my-form-status"></h1>
+              </form>
+
+              <!-- Place this script at the end of the body tag -->
+              <script>
+                var form = document.getElementById("my-form");
+                
+                async function handleSubmit(event) {
+                  event.preventDefault();
+                  var status = document.getElementById("my-form-status");
+                  var data = new FormData(event.target);
+                  fetch(event.target.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                  }).then(response => {
+                    if (response.ok) {
+                      status.innerHTML = "Thanks for your submission!";
+                      form.reset()
+                    } else {
+                      response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                          status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                        } else {
+                          status.innerHTML = "Oops! There was a problem submitting your form"
+                        }
+                      })
+                    }
+                  }).catch(error => {
+                    status.innerHTML = "Oops! There was a problem submitting your form"
+                  });
+                }
+                form.addEventListener("submit", handleSubmit)
+              </script>
+
+
+
+
+
+            <!-- <form id="myForm" action="https://formspree.io/f/mvgzbjbe" method="post">
               <div class="form-group">
-                <input type="text" name="firstname" placeholder="your name" class="box" id="firstname">
-                <span  id="fname"></span>
-                 <span  id="fname2"></span>
+                <input type="text" name="firstname" placeholder="Your Name" class="box" id="firstname" required>
+               
               </div>
               <div class="form-group">
                 <input  name="email" placeholder="Email" type="email"  class="box" id="email" required="">
-                  <span id="emailv1"></span>    
+                 
+              </div>
+              <div class="form-group">
+                <input  name="mobile" placeholder="Mobile #" type="Mobile"  class="box" id="Mobile" required="">
+                  
               </div>
               <div class="form-group">
                 <input type="text" placeholder="subject" class="box">
               </div>
               <div class="form-group">
-                <textarea name="comment" class="box" placeholder="your message" id="" cols="30" rows="10"  id="comment" required="" ></textarea>
+                <textarea name="comment" class="box" placeholder="Your message" id="" cols="30" rows="10"  id="comment" required="" ></textarea>
               </div>
-                <!-- <input type="submit" value="send " class="btns"> -->
+              
                 <button class="btns"  name="send" id="send" type="submit">SEND <i class="fas fa-paper-plane"></i></button>
-                <!-- <a href="jacascript:void(0)" type="submit" class="btns" id="sent-btn">SEND <i class="fas fa-paper-plane"></i></a> -->
-            </form>
+             </form> -->
         </div>
        
     </div>
