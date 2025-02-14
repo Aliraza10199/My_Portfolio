@@ -23,10 +23,10 @@
 .map-container {
     width: 80%;
     max-width: 400px;
-    border: 2px solid #007BFF;
+    /* border: 2px solid #069b1a; */
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
 }
 iframe {
     width: 100%;
